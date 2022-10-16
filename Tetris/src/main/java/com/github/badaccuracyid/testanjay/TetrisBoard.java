@@ -66,6 +66,45 @@ public class TetrisBoard {
     public void spawnTetromino(Tetromino tetromino) {
         this.activeTetromino = tetromino;
 
+        // check collision of newly spawned tetromino
+        Tetromino copy = tetromino.copy();
+
+        char[][] copyTetrominoShape = copy.getTetrominoShape();
+        int copyTetrominoX = copy.getX();
+        int copyTetrominoY = copy.getY();
+
+        for (int i = 0; i < copyTetrominoShape.length; i++) {
+            for (int j = 0; j < copyTetrominoShape[i].length; j++) {
+                if (copyTetrominoShape[i][j] != ' ') {
+                    if (board[copyTetrominoX + i][copyTetrominoY + j] != 0) {
+
+                        char[][] tetrominoShape = tetromino.getTetrominoShape();
+                        int tetrominoX = tetromino.getX();
+                        int tetrominoY = tetromino.getY();
+
+                        for (int k = 0; k < tetrominoShape.length; k++) {
+                            for (int l = 0; l < tetrominoShape[k].length; l++) {
+                                if (tetrominoShape[k][l] != ' ') {
+                                    board[tetrominoX + k][tetrominoY + l] = '1';
+                                }
+                            }
+                        }
+
+                        printBoard();
+
+                        System.out.println();
+                        System.out.println(" ========= ");
+                        System.out.println("Game over!");
+                        System.out.println(" ========= ");
+                        System.out.println();
+                        System.exit(0);
+                        return;
+                    }
+                }
+            }
+        }
+
+
         char[][] tetrominoShape = tetromino.getTetrominoShape();
         int tetrominoX = tetromino.getX();
         int tetrominoY = tetromino.getY();
