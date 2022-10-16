@@ -77,19 +77,7 @@ public class TetrisBoard {
             for (int j = 0; j < copyTetrominoShape[i].length; j++) {
                 if (copyTetrominoShape[i][j] != ' ') {
                     if (board[copyTetrominoX + i][copyTetrominoY + j] != 0) {
-
-                        char[][] tetrominoShape = tetromino.getTetrominoShape();
-                        int tetrominoX = tetromino.getX();
-                        int tetrominoY = tetromino.getY();
-
-                        for (int k = 0; k < tetrominoShape.length; k++) {
-                            for (int l = 0; l < tetrominoShape[k].length; l++) {
-                                if (tetrominoShape[k][l] != ' ') {
-                                    board[tetrominoX + k][tetrominoY + l] = '1';
-                                }
-                            }
-                        }
-
+                        printAtBoard(tetromino, '1');
                         printBoard();
 
                         System.out.println();
@@ -104,7 +92,11 @@ public class TetrisBoard {
             }
         }
 
+        printAtBoard(tetromino, '1');
+        printBoard();
+    }
 
+    private void printAtBoard(Tetromino tetromino, char x) {
         char[][] tetrominoShape = tetromino.getTetrominoShape();
         int tetrominoX = tetromino.getX();
         int tetrominoY = tetromino.getY();
@@ -112,29 +104,15 @@ public class TetrisBoard {
         for (int i = 0; i < tetrominoShape.length; i++) {
             for (int j = 0; j < tetrominoShape[i].length; j++) {
                 if (tetrominoShape[i][j] != ' ') {
-                    board[tetrominoX + i][tetrominoY + j] = '1';
+                    board[tetrominoX + i][tetrominoY + j] = x;
                 }
             }
         }
-
-        printBoard();
     }
 
     public void spawnFixedTetromino(Tetromino tetromino) {
         this.activeTetromino = tetromino;
-
-        char[][] tetrominoShape = tetromino.getTetrominoShape();
-        int tetrominoX = tetromino.getX();
-        int tetrominoY = tetromino.getY();
-
-        for (int i = 0; i < tetrominoShape.length; i++) {
-            for (int j = 0; j < tetrominoShape[i].length; j++) {
-                if (tetrominoShape[i][j] != ' ') {
-                    board[tetrominoX + i][tetrominoY + j] = '2';
-                }
-            }
-        }
-
+        printAtBoard(tetromino, '2');
         printBoard();
     }
 
