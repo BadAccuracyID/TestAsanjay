@@ -76,7 +76,7 @@ public class TetrisBoard {
         for (int i = 0; i < copyTetrominoShape.length; i++) {
             for (int j = 0; j < copyTetrominoShape[i].length; j++) {
                 if (copyTetrominoShape[i][j] != ' ') {
-                    if (board[copyTetrominoX + i][copyTetrominoY + j] != 0) {
+                    if (board[copyTetrominoX + i][copyTetrominoY + j] == '2') {
                         printAtBoard(tetromino, '1');
                         printBoard();
 
