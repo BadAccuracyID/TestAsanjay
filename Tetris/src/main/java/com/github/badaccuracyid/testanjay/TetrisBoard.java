@@ -40,21 +40,16 @@ public class TetrisBoard {
                     }
                 }
             }
+
             System.out.print("#");
-            if (i == 6) {
-                System.out.println("        Your score is: " + score);
-            } else if (i == 8) {
-                System.out.println("        Press 'a' to move left");
-            } else if (i == 9) {
-                System.out.println("        Press 'd' to move right");
-            } else if (i == 10) {
-                System.out.println("        Press 's' to move down");
-            } else if (i == 11) {
-                System.out.println("        Press 'w' to rotate");
-            } else if (i == 12) {
-                System.out.println("        Press 'q' to quit");
-            } else {
-                System.out.println();
+            switch (i) {
+                case 6 -> System.out.println("        Your score is: " + score);
+                case 8 -> System.out.println("        Press 'a' to move left");
+                case 9 -> System.out.println("        Press 'd' to move right");
+                case 10 -> System.out.println("        Press 's' to move down");
+                case 11 -> System.out.println("        Press 'w' to rotate");
+                case 12 -> System.out.println("        Press 'q' to quit");
+                default -> System.out.println();
             }
         }
 
