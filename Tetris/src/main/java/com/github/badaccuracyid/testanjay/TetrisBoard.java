@@ -227,7 +227,6 @@ public class TetrisBoard {
         }
 
         if (tetrominoY + this.activeTetromino.getHeight() > height - 1) {
-            this.score += 10;
             this.spawnFixedTetromino(this.activeTetromino);
             this.checkForFullColumns();
 
@@ -238,7 +237,6 @@ public class TetrisBoard {
                 for (int j = 0; j < tetrominoShape[i].length; j++) {
                     if (tetrominoShape[i][j] != ' ') {
                         if (board[tetrominoX + i][tetrominoY + j + 1] == '2') {
-                            this.score += 10;
                             this.spawnFixedTetromino(this.activeTetromino);
                             this.checkForFullColumns();
 
