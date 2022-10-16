@@ -1,0 +1,1 @@
+java -jar build/libs/TestAnjay-Var4.jar

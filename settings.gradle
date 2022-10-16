@@ -1,0 +1,10 @@
+rootProject.name = 'TestAnjay'
+
+include(':Template')
+
+include(':Var1')
+include(':Var2')
+include(':Var3')
+include(':Var4')
+
+include(':Tetris')

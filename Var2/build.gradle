@@ -1,0 +1,14 @@
+plugins {
+    id 'TestAnjay'
+}
+
+java.sourceCompatibility = JavaVersion.VERSION_17
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.github.badaccuracyid.testanjay.Main'
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    archiveFileName = "TestAnjay-" + project.name + ".jar"
+}
