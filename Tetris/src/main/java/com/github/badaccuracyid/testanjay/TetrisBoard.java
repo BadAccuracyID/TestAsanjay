@@ -40,28 +40,32 @@ public class TetrisBoard {
                     }
                 }
             }
-            System.out.println("#");
+            System.out.print("#");
+            if (i == 6) {
+                System.out.println("        Your score is: " + score);
+            } else if (i == 8) {
+                System.out.println("        Press 'a' to move left");
+            } else if (i == 9) {
+                System.out.println("        Press 'd' to move right");
+            } else if (i == 10) {
+                System.out.println("        Press 's' to move down");
+            } else if (i == 11) {
+                System.out.println("        Press 'w' to rotate");
+            } else if (i == 12) {
+                System.out.println("        Press 'q' to quit");
+            } else {
+                System.out.println();
+            }
         }
 
         for (int i = -1; i <= width; i++) {
             System.out.print("#");
         }
         System.out.println();
-
-        printInstructions();
+        System.out.println();
+        System.out.print(">> ");
     }
 
-    private void printInstructions() {
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println("Your score is: " + score);
-        System.out.println("Press 'a' to move left");
-        System.out.println("Press 'd' to move right");
-        System.out.println("Press 's' to move down");
-        System.out.println("Press 'w' to rotate");
-        System.out.println("Press 'q' to quit");
-    }
 
     public void spawnTetromino(Tetromino tetromino) {
         this.activeTetromino = tetromino;
