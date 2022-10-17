@@ -269,6 +269,10 @@ public class TetrisBoard {
         for (int i = 0; i < copyTetrominoShape.length; i++) {
             for (int j = 0; j < copyTetrominoShape[i].length; j++) {
                 if (copyTetrominoShape[i][j] != ' ') {
+                    if (copy.getX() + i > width - 1 || copy.getY() + j > height - 1) {
+                        this.spawnTetromino(this.activeTetromino);
+                        return;
+                    }
                     if (board[copy.getX() + i][copy.getY() + j] == '2') {
                         this.spawnTetromino(this.activeTetromino);
                         return;
