@@ -49,7 +49,8 @@ public class TetrisBoard {
                 case 10 -> System.out.println("        Press 's' to move down");
                 case 11 -> System.out.println("        Press 'w' to rotate");
                 case 12 -> System.out.println("        Press 'q' to quit");
-                case 13 -> System.out.println("        Press 'auto' to toggle auto mode");
+                case 13 ->
+                        System.out.println("        Press 'auto' to toggle auto mode [" + (Main.autoMode.get() ? "ON" : "OFF") + "]");
                 default -> System.out.println();
             }
         }

@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Main {
 
-    private static final AtomicBoolean autoMode = new AtomicBoolean(false);
+    public static final AtomicBoolean autoMode = new AtomicBoolean(false);
 
     public static void main(String[] args) {
         TetrisBoard board = new TetrisBoard();
@@ -24,6 +24,7 @@ public class Main {
             input = scanner.nextLine();
             if (input.equalsIgnoreCase("auto")) {
                 autoMode.set(!autoMode.get());
+                board.printBoard();
                 continue;
             }
 
