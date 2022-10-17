@@ -22,11 +22,6 @@ public class Tetromino1 extends Tetromino {
     }
 
     @Override
-    public char[][] getTetrominoShape() {
-        return shape[rotation];
-    }
-
-    @Override
     public int getHeight() {
         if (rotation == 0) {
             return 4;

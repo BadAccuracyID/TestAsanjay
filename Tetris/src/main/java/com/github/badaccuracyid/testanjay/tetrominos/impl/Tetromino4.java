@@ -31,16 +31,6 @@ public class Tetromino4 extends Tetromino {
     }
 
     @Override
-    public void rotate() {
-        rotation = (rotation + 1) % 4;
-    }
-
-    @Override
-    public char[][] getTetrominoShape() {
-        return shape[rotation];
-    }
-
-    @Override
     public int getHeight() {
         if (rotation == 0 || rotation == 2) {
             return 2;

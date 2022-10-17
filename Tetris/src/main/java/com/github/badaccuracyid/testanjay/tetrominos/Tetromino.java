@@ -33,7 +33,9 @@ public abstract class Tetromino {
         return this.y;
     }
 
-    abstract public char[][] getTetrominoShape();
+    public char[][] getTetrominoShape() {
+        return shape[rotation];
+    }
 
     abstract public int getHeight();
 
